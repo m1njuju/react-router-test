@@ -1,14 +1,8 @@
-import { Link, NavLink, Outlet, useNavigate } from "react-router-dom";
+import { NavLink, Outlet, useNavigate } from "react-router-dom";
 
 const Layout = () => {
   const activeStyle = {
     color: "green",
-    fontWeight: "bold",
-    textDecoration: "none",
-  };
-  const unActiveStyle = {
-    color: "black",
-    fontWeight: "bold",
     textDecoration: "none",
   };
   const navigate = useNavigate();
@@ -20,21 +14,21 @@ const Layout = () => {
       <header>
         <NavLink
           to="/"
-          style={({ isActive }) => (isActive ? activeStyle : unActiveStyle)}
+          style={({ isActive }) => (isActive ? activeStyle : undefined)}
         >
           Home{" "}
         </NavLink>{" "}
         |
         <NavLink
           to="/about"
-          style={({ isActive }) => (isActive ? activeStyle : unActiveStyle)}
+          style={({ isActive }) => (isActive ? activeStyle : undefined)}
         >
           About{" "}
         </NavLink>{" "}
         |
         <NavLink
           to="/boardlist"
-          style={({ isActive }) => (isActive ? activeStyle : unActiveStyle)}
+          style={({ isActive }) => (isActive ? activeStyle : undefined)}
         >
           Board{" "}
         </NavLink>
